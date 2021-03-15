@@ -42,7 +42,7 @@ def create_app(test_config=None):
       }), 404
   
 #####################################################
-  @app.route('/movies/<int:id>', methods=['GET'])
+  @app.route('/movies/<int:movie_id>', methods=['GET'])
   @requires_auth('get:movies')
   def get_movies_by_id(jwt_payload, movie_id):
     try:
@@ -92,7 +92,7 @@ def create_app(test_config=None):
       }), 404
 
 #####################################################  
-  @app.route('/actors/<int:id>', methods=['GET'])
+  @app.route('/actors/<int:actor_id>', methods=['GET'])
   @requires_auth('get:actors')
   def get_actorss_by_id(jwt_payload, actor_id):
     try:
